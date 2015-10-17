@@ -21,7 +21,21 @@
     <script src="/javascripts/get_cbc_videos.js"></script>
 
     <title>{% block title %}base{% endblock %}</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
 
+    $(window).load(function(){
+	    {% block onload %}
+	    console.log("window load");
+	    {% endblock %}
+    })
+    $( document ).ready(function() {
+	    console.log("document ready");
+	    {% block onready %}
+
+	    {% endblock %}
+    });
+    </script>
   </head>
   <body>
     <div class="container">
@@ -34,7 +48,6 @@
     </div> <!-- /container -->
 
     <!-- jQuery first, then Bootstrap JS. -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
   </body>
 </html>

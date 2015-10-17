@@ -1,9 +1,12 @@
 {% extends 'base.html' %}
 
+{% block onready %}
+get_video(show_list[0],10);
+{% endblock %}
+
 {% block title %}CBC_VIDEO{% endblock %}
 
 {% block content %}
-<p>This is just an awesome page.</p>
 
 <div id="videos">
 </div>
