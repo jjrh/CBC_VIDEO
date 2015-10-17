@@ -1,0 +1,38 @@
+* CBC_VIDEO
+  CBC web player does not provide direct MP4 urls, however they can be queried directly from:
+  [[http://feed.theplatform.com/f/h9dtGB/r3VD0FujBumK?%2527%2B%2522&form%3Djson&range%3D1-100][http://feed.theplatform.com/f/h9dtGB/r3VD0FujBumK?%27+%22&form=json&range=1-100]
+
+  This code simply queries the URL (from the client browser) and parses the results.
+
+* Technology
+
+** server
+  - [[https://nodejs.org/en/][Node js]]
+  - [[http://expressjs.com/][Express js]]
+  - [[http://paularmstrong.github.io/swig/][swig]] ( templating )
+
+** client
+  - [[http://getbootstrap.com/][bootstrap]]
+  - [[https://jquery.com/][jQuery]]
+  - [[http://handlebarsjs.com/][handlebars js]] ( templating )
+
+* INSTALL
+  While this doesn't HAVE to be run from Node for development reasons it express was used.
+  Other reason is to beable to deploy the code to Heroku.
+
+  Typical Node/express setup:
+
+  #+BEGIN_SRC sh
+  $ git clone git@github.com:jjrh/CBC_VIDEO.git
+  $ npm install
+  $ ./run_server.sh 3030
+  #+END_SRC
+
+  For the most part CDN's have been used for libraries.
+
+* credits / references
+  Credit to this person who made tracking down the right URLs much easier.
+  http://cbcvideocontentconnector.appspot.com/
+  https://github.com/misener/CBC-Content-Connector
+
+  Obviously credit to the CBC! http://www.cbc.ca/player/
