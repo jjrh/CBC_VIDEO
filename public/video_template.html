@@ -1,0 +1,27 @@
+<div id="entry_{{guid}}">
+  <h4>{{date}} - <b>{{title}}</b> </h4>
+  <hr>
+  <div class="btn-group" role="group" aria-label="Basic example">
+    {{#each urls}}
+    <button type="button" index="{{@index}}" id="btn__{{../guid}}__{{quality}}" class="btn btn-secondary quality__button">{{quality}}</button>
+    {{/each}}
+  </div>
+
+  <hr>
+  <div id="videos__{{guid}}">
+    {{#urls}}
+<!--    {{@index}}  -->
+    <div id="videos__{{../guid}}__{{quality}}" class="videos__{{../guid}}" style="display: none;">
+      <video controls>
+	<source src="{{url}}" type="video/mp4" preload="none">
+	Your browser does not support the <code>video</code> element.
+      </video>
+      <br>
+      <hr>
+      <a href="{{url}}">{{url}}</a>
+    </div>
+
+
+    {{/urls}}
+  </div>
+</div>
