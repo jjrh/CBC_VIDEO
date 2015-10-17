@@ -1,8 +1,8 @@
 * CBC_VIDEO
-  CBC web player does not provide direct MP4 urls, however they can be queried directly from:
+  CBC [[http://www.cbc.ca/player/][web player]] does not provide direct MP4 urls, however they can be queried directly from:
   [[http://feed.theplatform.com/f/h9dtGB/r3VD0FujBumK?%2527%2B%2522&form%3Djson&range%3D1-100][http://feed.theplatform.com/f/h9dtGB/r3VD0FujBumK?%27+%22&form=json&range=1-100]]
 
-  This code simply queries the URL (from the client browser) and parses the results.
+  This simply queries the URL (from the client browser) and parses the results.
 
 * Technology
 
@@ -32,7 +32,10 @@
 
 * credits / references
   Credit to this person who made tracking down the right URLs much easier.
-  http://cbcvideocontentconnector.appspot.com/
-  https://github.com/misener/CBC-Content-Connector
+  - http://cbcvideocontentconnector.appspot.com/
+  - https://github.com/misener/CBC-Content-Connector
 
-  Obviously credit to the CBC! http://www.cbc.ca/player/
+
+  And obviously credit to the [[http://www.CBC.ca][CBC]]!
+
+  - http://www.cbc.ca/player/
