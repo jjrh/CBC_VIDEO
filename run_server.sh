@@ -1,3 +1,3 @@
 #!/bin/bash
-export PORT=3030           
+export PORT=$1
 DEBUG=CBC_VIDEO:* npm start
