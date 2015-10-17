@@ -10,8 +10,8 @@ var video_template = null; // handlebars template
 
 function format_date(d){ return d.toISOString().split("T")[0] + " " + d.toTimeString().split(" ")[0]; }
 
-function get_video(showname,range){
-    var new_url = "http://feed.theplatform.com/f/h9dtGB/r3VD0FujBumK?%27+%22&form=json&range=1-"+range+"&sort=added|desc&pretty=true&byCustomValue={show}{"+showname+"}"
+function get_video(showname,start,end){
+    var new_url = "http://feed.theplatform.com/f/h9dtGB/r3VD0FujBumK?%27+%22&form=json&range="+start+"-"+end+"&sort=added|desc&pretty=true&byCustomValue={show}{"+showname+"}"
 
     /* do the template */
     $.get('/video_template.html', function(template) {
@@ -40,7 +40,7 @@ function parse_media_content(content_arr, entry){
     // console.log("media_parse", entry.guid)
 
     var media_release = {
-	SRT:"",
+	srt:"",
 	urls:[],
 	guid: entry.guid,
 	date: format_date(new Date(entry.pubDate)),
