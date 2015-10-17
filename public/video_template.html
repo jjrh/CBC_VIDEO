@@ -3,17 +3,17 @@
   <hr>
   <div class="btn-group" role="group" aria-label="Basic example">
     {{#each urls}}
-    <button type="button" index="{{@index}}" id="btn__{{../guid}}__{{quality}}" class="btn btn-secondary quality__button">{{quality}}</button>
+    <button type="button" index="{{@index}}" id="btn_-_{{../guid}}_-_{{quality}}" class="btn btn-secondary quality_-_button">{{quality}}</button>
     {{/each}}
   </div>
 
   <hr>
-  <div id="videos__{{guid}}">
+  <div id="videos_-_{{guid}}">
     {{#urls}}
 <!--    {{@index}}  -->
-    <div id="videos__{{../guid}}__{{quality}}" class="videos__{{../guid}}" style="display: none;">
-      <video controls>
-	<source src="{{url}}" type="video/mp4" preload="none">
+    <div id="videos_-_{{../guid}}_-_{{quality}}" class="videos_-_{{../guid}}" style="display: none;">
+      <video controls preload="none" >
+	<source src="{{url}}" type="video/mp4">
 	Your browser does not support the <code>video</code> element.
       </video>
       <br>

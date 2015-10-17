@@ -37,7 +37,7 @@ function success(result){
 
 
 function parse_media_content(content_arr, entry){
-    console.log("media_parse", entry.guid)
+    // console.log("media_parse", entry.guid)
 
     var media_release = {
 	SRT:"",
@@ -46,7 +46,7 @@ function parse_media_content(content_arr, entry){
 	date: format_date(new Date(entry.pubDate)),
 	title: entry.title
     };
-    console.log(content_arr);
+    // console.log(content_arr);
     for(var i=0; i<content_arr.length; i++){
 	var item = content_arr[i];
 	//	console.log(item);
@@ -84,16 +84,18 @@ function parse_media_content(content_arr, entry){
 
 
 function setup_listeners(){
-    $(".quality__button").unbind();
-    $(".quality__button").click(function(btn){
+    $(".quality_-_button").unbind();
+    $(".quality_-_button").click(function(btn){
 	var clicked_id = $(btn.currentTarget).attr('id');
 	var video_id = clicked_id.replace("btn","videos");
-	var videos_cont= video_id.split("__")
+	var videos_cont= video_id.split("_-_")
+	console.log(videos_cont)
 	// videos_cont = videos_cont.filter(function(v,k){ if(v.length >0){ return v} })
 	// console.log(videos_cont);
-	videos_cont=videos_cont[0]+"__"+videos_cont[1]
+	videos_cont=videos_cont[0]+"_-_"+videos_cont[1]
 	$("."+videos_cont).hide();
 	console.log(videos_cont)
+	console.log($("."+videos_cont));
 	//	$("."+
 	$("#"+video_id).show();
 
