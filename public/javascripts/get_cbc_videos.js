@@ -11,7 +11,14 @@ var video_template = null; // handlebars template
 function format_date(d){ return d.toISOString().split("T")[0] + " " + d.toTimeString().split(" ")[0]; }
 
 function get_video(showname,start,end){
-    var new_url = "http://feed.theplatform.com/f/h9dtGB/r3VD0FujBumK?%27+%22&form=json&range="+start+"-"+end+"&sort=added|desc&pretty=true&byCustomValue={show}{"+showname+"}"
+    $("#videos").html("");
+    var new_url = null;
+    if(showname.length > 0){
+        new_url = "http://feed.theplatform.com/f/h9dtGB/r3VD0FujBumK?%27+%22&form=json&range="+start+"-"+end+"&sort=added|desc&pretty=true&byCustomValue={show}{"+showname+"}"
+    }
+    else{
+        new_url = "http://feed.theplatform.com/f/h9dtGB/r3VD0FujBumK?%27+%22&form=json&range="+start+"-"+end+"&sort=added|desc&pretty=true";
+    }
 
     /* do the template */
     $.get('/video_template.html', function(template) {
@@ -34,6 +41,9 @@ function success(result){
     }
     setup_listeners();
 }
+
+
+
 
 
 function parse_media_content(content_arr, entry){
@@ -116,4 +126,14 @@ function setup_listeners(){
     $("button[index='0']").click();
     console.log("listeners called");
 
+}
+
+
+function non_dynamic_listeners(){
+    $(".show").click(function(e){
+        get_video($(e.target).attr("show"),1,100);
+
+        $(".show_nav_link").removeClass("active");
+        $(e.target.parentNode).addClass("active");
+    })
 }

@@ -1,14 +1,20 @@
 
 <div class="panel panel-primary">
   <div class="panel-heading">
-    <h3 class="panel-title">{{date}} - {{title}}</h3>
+    <h3 class="panel-title"><b>{{title}}</b> - <small><b>{{date}}</b></small></h3>
   </div>
   <div class="panel-body">
     <div class="btn-group" role="group" aria-label="">
       {{#each urls}}
+      {{#if quality}}
       <button type="button"  index="{{@index}}" id="btn_-_{{../guid}}_-_{{quality}}" class="btn btn-default {{../guid}}_-_button quality_-_button">{{quality}}</button>
+      {{else}}
+      <button type="button"  index="{{@index}}" id="btn_-_{{../guid}}_-_{{quality}}" class="btn btn-default {{../guid}}_-_button quality_-_button" style="display:none" >{{quality}}</button>
+
+      {{/if}}
       {{/each}}
     </div>
+
     <div class="well ">
       <div id="videos_-_{{guid}}" class="center-block">
 	{{#urls}}
@@ -25,10 +31,12 @@
 	    </div>
 	  </div>
 	  <div class="row">
+            {{#if ../srt}}
 	    <div class="input-group">
 	      <span class="input-group-addon label label-info ">Subtitle:</span>
 	      <span class="form-control"><a href="{{../srt}}">{{../srt}}</a></span>
 	    </div>
+            {{/if}}
 	  </div>
 
 	</div>
